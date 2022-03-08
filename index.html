@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+
+  <body>
+    <div id="game">
+      <section class="grid"></section>
+    </div>
+    <!-- <div class="card">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div> -->
+    <style>
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        display: none;
+        opacity: 0;
+      }
+      .modal.active {
+        display: flex;
+        opacity: 1;
+      }
+      .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .modal-content {
+        background-color: white;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        position: relative;
+        z-index: 10;
+        padding: 30px;
+      }
+      .modal-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 100rem;
+        color: white;
+        background-color: #eee;
+        padding: 5px;
+        transform: translate(50%, -50%);
+      }
+      .modal-main {
+        overscroll-behavior-y: contain;
+        text-align: center;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+      .yes,
+      .no {
+        margin: 8px;
+      }
+    </style>
+    <div class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <span class="modal-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </span>
+        <div class="modal-main">Bạn có muốn chơi tiếp không?</div>
+        <div class="button-container">
+          <button class="yes">YES</button>
+          <button class="no">NO</button>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
