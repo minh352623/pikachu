@@ -85,7 +85,8 @@ function resetGuess() {
         
         if(e.target.matches(".yes")){
             modal.classList.remove("active");
-
+            matcheds.forEach((item) => item.classList.remove("matched"));
+            generateCard();
             
         }else if(e.target.matches(".no")){
             matcheds.forEach((item) => item.classList.remove("matched"));
